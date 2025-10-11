@@ -1,0 +1,125 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #e6f7ff; /* Azul claro */
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 { margin: 0; }
+
+nav button {
+    background: #555;
+    color: #fff;
+    border: 0;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+nav button:hover { background: #777; }
+
+main {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Layout wrapper: left contact column + main about content */
+.content-wrap {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+#about {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    margin-right: 2rem;
+    width: 150px; /* Tamanho reduzido */
+    height: 150px; /* Tamanho reduzido */
+}
+
+#about-text { text-align: justify; }
+
+/* Contact panel placed beside the profile image */
+.contact-panel {
+    width: 280px; /* increased width to fit longer email */
+    background: rgba(255,255,255,0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.contact-panel .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-panel .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+/* Make the about layout wrap on small screens */
+@media (max-width: 700px) {
+    #about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .contact-panel { margin-left: 0; }
+    .contact-panel .social-links { flex-direction: row; gap: 1rem; }
+}
+
+/* Social links (used in contact-panel) */
+.social-links a {
+    color: #333;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem; /* slightly smaller to fit */
+}
+
+.social-links i { font-size: 1.45rem; /* slightly reduced to avoid overflow */ }
+
+/* WhatsApp brand color */
+.social-links .fa-whatsapp { color: #25D366; }
+
+.social-links a:hover i {
+    transform: translateY(-2px);
+    transition: transform 0.15s ease;
+}
+
+@media (max-width: 480px) {
+    .social-links i { font-size: 1.4rem; }
+    .social-links { gap: 1rem; }
+}
+
+/* Subtle code-like background overlay */
